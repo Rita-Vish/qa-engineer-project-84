@@ -1,0 +1,17 @@
+name: Margarita Vishnyakova
+job: QA Engineer
+level: junior
+email: mmarenko@hexlet.io
+description: |
+  Я прошла обучение по профессии QA Engineer (Manual)
+  
+skills:
+  - Функциональное и нефункциональное тестирование
+  - Написание тестовой документации (тест-кейсов, багрепортов и др)
+  - Методологии Agile, Scrum
+  - Умение работать с требованиями
+  - Знание техник тест дизайна
+  - Тестирование API
+  
+stek:
+  - Linux, SQL, JIRA, Git, Postman
