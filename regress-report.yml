@@ -1,152 +1,152 @@
 ---
-- summary: |
+test-cases:
+ - summary: |
     Проверка возможности просматривать товары на главной странице
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Проверка пагинации при отображении товаров на странице
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Поиск товара по ключевому слову
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Поиск товара по несуществующему ключевому слову
-  status: fail
+   status: fail
 
-- summary: |
+ - summary: |
     Фильтрация товаров по производителю
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Фильтрация товаров по наличию
-  status: fail
+   status: fail
 
-- summary: |
+ - summary: |
     Фильтрация товаров по цене
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Фильтрация товаров по цене с отрицательным значением
-  status: fail
+   status: fail
 
-- summary: |
+ - summary: |
     Возможность просматривать карточку каждого товара
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     На странице товара отображаются название, рейтинг, цена, цена со скидкой
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     При смене языка в правом верхнем углу верхней панели, меняется язык меню, фильтров и товаров
-  status: fail
+   status: fail
   
-- summary: |
+ - summary: |
     При смене языка, изменяется валюта в поле "цена"
-  status: fail
+   status: fail
   
-- summary: |
+ - summary: |
     Добавление товаров в корзину
-  status: pass
+   status: pass
   
-- summary: |
+ - summary: |
     Сайт должен предоставлять пользователю подтверждение при добавлении товара в корзину
-  status: fail
+   status: fail
 
-- summary: |
+ - summary: |
     Пользователь может удалить товар из корзины
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Пользователь может добавить товар в корзину и продолжить выбирать товары в каталоге
-  status: pass
+   status: pass
 
-- summary: |
+ - summary: |
     Пользователь может оплатить заказ
-  status: fail
+   status: fail
 
-- summary: |
+ - summary: |
     Корзина хранится в сессии браузера
-  status: pass
+   status: pass
 
-  bugreports:
-  
-- summary: |
+bugreports:
+ - summary: |
     При вводе отрицательного значения в поле "фильтр по цене" не возникает сообщения о вводе некорректного значения
-  environment: |
+   environment: |
      Google Chrome   107.0.5304.121 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+   steps-to-reproduce: |
     1. Открыть каталог товаров
     2. В поле "фильтр по цене" ввести "-1"
-  expected-result: |
+   expected-result: |
     Должно появится сообщение "Значение должно быть больше 0"
-  actual-result: |
+   actual-result: |
     Ничего не происходит, сообщение не появляется
 
-- summary: |
+ - summary: |
     Не работает фильтрация товаров по наличию
-  environment: |
+   environment: |
      Google Chrome   107.0.5304.121 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+   steps-to-reproduce: |
     1. Открыть каталог товаров
     2. В поле "в наличии" должна стоять галочка
     3. В поле "в наличии" убрать галочку
-  expected-result: |
+   expected-result: |
     Должны остаться только те товары, у которых параметр "количество" = 0, или не указан
-  actual-result: |
+   actual-result: |
     Отображаются товары у которых параметр количество >0
     
-- summary: |
+ - summary: |
     При поиске товаров по несуществующему ключевому слову, не появляется сообщения "товары не найдены"
-  environment: |
+   environment: |
      Google Chrome   107.0.5304.121 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+   steps-to-reproduce: |
     1. Открыть каталог товаров
     2. В поиске по ключевому слову ввести "куркума"
-  expected-result: |
+   expected-result: |
     Должно отобразиться сообщение "товары не найдены"
-  actual-result: |
+   actual-result: |
     Отображаются все товары
     
-- summary: |
+ - summary: |
     При смене языка c английского на русский, не меняется язык в названии и описании товаров
-  environment: |
+   environment: |
     Google Chrome   107.0.5304.121 (Официальная сборка) (64 бит)
     пункт требований 17, файл /requirements.yml
-  steps-to-reproduce: |
+   steps-to-reproduce: |
     1. Открыть главную страницу сайта
     2. Выбрать в правом верхнем углу язык "русский"
-  expected-result: |
+   expected-result: |
     При выборе языка "русский" название и описание товаров должно отображаться на русском языке
-  actual-result: |
+   actual-result: |
     При выборе языка "русский" название и описание товаров отображается на английском языке
 
-- summary: |
+ - summary: |
     При выбре языка "русский", валюта не отображается в рублях
-  environment: |
+   environment: |
     Google Chrome   107.0.5304.121 (Официальная сборка) (64 бит)
     пункт требований 18, файл /requirements.yml
-  steps-to-reproduce: |
+   steps-to-reproduce: |
     1. Открыть главную страницу сайта
     2. Выбрать в правом верхнем углу язык "русский"
-  expected-result: |
+   expected-result: |
     Цена товаров должна отображаться в рублях
-  actual-result: |
+   actual-result: |
     Цена товаров отображается в $
 
-- summary: |
+ - summary: |
     Нет кнопки для оплаты товаров
-  environment: |
+   environment: |
     Google Chrome   107.0.5304.121 (Официальная сборка) (64 бит)
     пункт требований 15, файл /requirements.yml
-  steps-to-reproduce: |
+   steps-to-reproduce: |
     1. Открыть каталог товаров
     2. Добавить любой товар в корзину
     3. Перейти в корзину
     4. Нажать кнопку "оформить заказ"
-  expected-result: |
+   expected-result: |
     Должна отображаться кнопка "оплатить"
-  actual-result: |
+   actual-result: |
     При оформлении заказа кнопка "оплатить" не отображается
